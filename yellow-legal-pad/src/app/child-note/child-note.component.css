@@ -1,0 +1,28 @@
+table {
+  table-layout: fixed;
+  width: 200px;
+  height: 200px;
+  word-wrap:break-word;
+  border: 1px solid #0066ff;
+  background-color: #e6e600;
+}
+
+th {
+  background-color: #0066ff;
+  height: 20px;
+  color: antiquewhite;
+}
+
+.btn {
+  background-color: DodgerBlue; /* Blue background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 8px 11px; /* Some padding */
+  font-size: 12px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+}

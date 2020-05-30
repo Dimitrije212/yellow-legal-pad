@@ -1,0 +1,12 @@
+<div>
+  <table>
+    <ng-container *ngFor="let n of notes; let i = index">
+      <tr *ngIf="i%3 == 0">
+        <td> <app-child-note  [note] = "n"></app-child-note> </td>
+        <td *ngIf="i+1 < notes.length"> <app-child-note  [note] = "notes[i + 1]"></app-child-note></td>
+        <td *ngIf="i+2 < notes.length"> <app-child-note  [note] = "notes[i + 2]"></app-child-note></td>
+      </tr>
+    </ng-container>
+
+  </table>
+</div>
