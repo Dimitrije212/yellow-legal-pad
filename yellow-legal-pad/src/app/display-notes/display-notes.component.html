@@ -1,12 +1,12 @@
-<div *ngIf="pinnedNotes != undefined || pinnedNotes.length != 0">
+<div *ngIf="pinnedNotes.length > 0">
   <h3>Pinned notes:</h3>
   <hr>
   <table>
     <ng-container *ngFor="let n of pinnedNotes; let i = index">
       <tr *ngIf="i%3 == 0">
-        <td> <app-child-note [note] = "n" [notes] = "pinnedNotes" [pinnedNotes] = "notes"></app-child-note> </td>
-        <td *ngIf="i+1 < pinnedNotes.length"> <app-child-note [note] = "pinnedNotes[i + 1]" [notes] = "pinnedNotes" [pinnedNotes] = "notes"></app-child-note></td>
-        <td *ngIf="i+2 < pinnedNotes.length"> <app-child-note [note] = "pinnedNotes[i + 2]" [notes] = "pinnedNotes" [pinnedNotes] = "notes"></app-child-note></td>
+        <td> <app-child-note [note] = "n" [notes] = "pinnedNotes" [pinnedNotes] = "notes" [fromPin] = "true"></app-child-note> </td>
+        <td *ngIf="i+1 < pinnedNotes.length"> <app-child-note [note] = "pinnedNotes[i + 1]" [notes] = "pinnedNotes" [pinnedNotes] = "notes" [fromPin] = "true"></app-child-note></td>
+        <td *ngIf="i+2 < pinnedNotes.length"> <app-child-note [note] = "pinnedNotes[i + 2]" [notes] = "pinnedNotes" [pinnedNotes] = "notes" [fromPin] = "true"></app-child-note></td>
       </tr>
     </ng-container>
 
@@ -18,9 +18,9 @@
   <table>
     <ng-container *ngFor="let n of notes; let i = index">
       <tr *ngIf="i%3 == 0">
-        <td> <app-child-note [note] = "n" [notes] = "notes" [pinnedNotes] = "pinnedNotes"></app-child-note> </td>
-        <td *ngIf="i+1 < notes.length"> <app-child-note [note] = "notes[i + 1]" [notes] = "notes" [pinnedNotes] = "pinnedNotes"></app-child-note></td>
-        <td *ngIf="i+2 < notes.length"> <app-child-note [note] = "notes[i + 2]" [notes] = "notes" [pinnedNotes] = "pinnedNotes"></app-child-note></td>
+        <td> <app-child-note [note] = "n" [notes] = "notes" [pinnedNotes] = "pinnedNotes" [fromPin] = "false"></app-child-note> </td>
+        <td *ngIf="i+1 < notes.length"> <app-child-note [note] = "notes[i + 1]" [notes] = "notes" [pinnedNotes] = "pinnedNotes" [fromPin] = "false"></app-child-note></td>
+        <td *ngIf="i+2 < notes.length"> <app-child-note [note] = "notes[i + 2]" [notes] = "notes" [pinnedNotes] = "pinnedNotes" [fromPin] = "false"></app-child-note></td>
       </tr>
     </ng-container>
 

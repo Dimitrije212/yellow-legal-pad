@@ -5,3 +5,14 @@ table {
   border-spacing: 10px;
   border-collapse: separate;
 }
+
+
+hr {
+  width: 60%;
+  margin-right: 50%;
+  color: #328292;
+}
+
+h3 {
+  color: #21545e;
+}

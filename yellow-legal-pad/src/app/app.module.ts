@@ -8,13 +8,15 @@ import { ChildNoteComponent } from './child-note/child-note.component';
 import { NoteFocusDirective } from './note-focus.directive';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { DisableButtonDirective } from './disable-button.directive';
+import { NewNoteComponent } from './new-note/new-note.component';
 @NgModule({
   declarations: [
     AppComponent,
     DisplayNotesComponent,
     ChildNoteComponent,
     NoteFocusDirective,
-    DisableButtonDirective
+    DisableButtonDirective,
+    NewNoteComponent
   ],
   imports: [
     BrowserModule,

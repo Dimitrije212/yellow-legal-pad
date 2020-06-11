@@ -1,9 +1,35 @@
-#page-wrap {
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 50%;
+:host {
+  display: contents;
+}
 
-  /* background-image: url(../assets/cork-board.png);
-  background-repeat:repeat; */
+nav {
+  display: inline-flex;
+  flex-direction: row;
+  background: #68AEBC;
+  height: 35px;
+  width: 60%;
+  position: relative; /*fixed to be always on top even when scrolled*/
+  text-align: center;
+}
+
+router-outlet {
+  margin-left: 215px;
+  margin-top: 50px;
+}
+
+a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+a:hover {
+  background-color: rgb(35, 85, 95);
+}
+
+a.active {
+  border-bottom: 3px solid #f9ffa2;
+  padding-bottom: 6px;
 }

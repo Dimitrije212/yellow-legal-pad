@@ -1,4 +1,6 @@
-<div id="page-wrap">
-  <app-display-notes></app-display-notes>
-  <!-- <app-child-note></app-child-note> -->
-</div>
+<nav>
+  <a routerLink='/myNotes' routerLinkActive="active">My Notes</a>
+  <a routerLink='/newNote' routerLinkActive="active">New Note</a>
+</nav>
+
+<router-outlet #routerOutlet="outlet"></router-outlet>

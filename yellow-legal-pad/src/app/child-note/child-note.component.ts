@@ -12,12 +12,12 @@ export class ChildNoteComponent implements OnInit {
   @Input() note: Note;
   @Input() notes: Note[];
   @Input() pinnedNotes: Note[];
+  @Input() fromPin: boolean;
   show = false;
   pinTitle: string;
   selectedColor: string;
 
-  colors: string[] = ['white', 'yellow', 'green'];
-
+  colors: string[] = ['#c5d6ce', '#e9ee86', '#afbf30', '#fe102f', '#fc8abf', '#fee6ec'];
   constructor() { }
 
   ngOnInit(): void {
@@ -51,21 +51,32 @@ export class ChildNoteComponent implements OnInit {
   deleteNote(): void {
     if (confirm('Are you sure you want to delete "' + this.note.title + '"?')) {
       this.notes.splice(this.notes.indexOf(this.note), 1);
+      this.pinnedNotes.splice(this.pinnedNotes.indexOf(this.note), 1);
     }
   }
 
   pinNote(): void {
     if (this.note.pinned) {
+      if (!this.fromPin) {
+        return;
+      }
        // when note is pinned we set value to false and remove them from pinned list.
        // In this case pinned list is this.notes. It is reversed. See display-notes.component.html for more.
       this.note.pinned = false;
       this.notes.splice(this.notes.indexOf(this.note), 1);
+      this.pinTitle = 'Unpin this note';
     } else {
        // when note is not pinned we set value to true and push it to pinned list.
        // Here it is not reversed. See display-notes.component.html for more.
       this.note.pinned = true;
       this.pinnedNotes.push(this.note);
+      this.pinTitle = 'Pin this note';
     }
+  }
+
+  changeColor(): void {
+    const i = this.colors.indexOf(this.note.color);
+    this.note.color = this.colors[i + 1];
   }
 
 }
