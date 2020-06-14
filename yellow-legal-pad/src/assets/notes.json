@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Spisak za kupovinu",
+    "writing": "Hleb, Mleko, Jogurt",
+    "pinned": false
+  },
+  {
+    "title": "Angular kurs",
+    "writing": "Treba da uradimo nei projekat kako bi mogli da polazemo kurs",
+    "pinned": true
+  },
+  {
+    "title": "Neki naslov",
+    "writing": "Kreativnitekstkojinikonecitaniticenekocitati",
+    "pinned": false
+  },
+  {
+    "title": "Spisak za kupovinu",
+    "writing": "Hleb, Mleko, Jogudrt",
+    "pinned": false
+  }
+]

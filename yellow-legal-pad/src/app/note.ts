@@ -3,7 +3,7 @@ export class Note {
     public title: string,
     public writing: string,
     public pinned: boolean,
-    public color = '#e9ee86'
+    public color: string
   ) {
 
    }

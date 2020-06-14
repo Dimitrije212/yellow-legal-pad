@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Note } from './notes/note';
+import { NotesService } from '../notes.service';
+import { Note } from '../note';
 
 @Component({
   selector: 'app-display-notes',
@@ -10,22 +11,12 @@ export class DisplayNotesComponent implements OnInit {
 
   notes: Note[];
   pinnedNotes: Note[];
-  constructor() { }
+  constructor(private notesService: NotesService) { }
 
   ngOnInit(): void {
-    this.notes = [
-      new Note('Spisak za kupovinu', 'Hleb, Mleko, Jogurt', false),
-      new Note('Angular kurs', 'Treba da uradimo nei projekat kako bi mogli da polazemo kurs', true),
-      new Note('Neki naslov', 'Kreativnitekstkojinikonecitaniticenekocitati', false),
-      new Note('Spisak za kupovinu', 'Hleb, Mleko, Jogudrt', false),
-    ];
+    this.notes = this.notesService.getNotes();
     this.pinnedNotes = [];
-
-    this.notes.forEach(note => {
-      if (note.pinned) {
-        this.pinnedNotes.push(note);
-      }
-    });
+    this.pinnedNotes = this.notesService.getPinnedNotes();
   }
 
 

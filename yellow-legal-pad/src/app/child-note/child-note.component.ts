@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Note } from '../display-notes/notes/note';
+
+import { NotesService } from '../notes.service';
+import { Note } from '../note';
 
 
 @Component({
@@ -18,9 +20,13 @@ export class ChildNoteComponent implements OnInit {
   selectedColor: string;
 
   colors: string[] = ['#c5d6ce', '#e9ee86', '#afbf30', '#fe102f', '#fc8abf', '#fee6ec'];
-  constructor() { }
+  constructor(private notesService: NotesService) { }
 
   ngOnInit(): void {
+    if (this.note.color === undefined) {
+      this.note.color = '#e9ee86';
+    }
+
     if (!this.note.pinned) {
       this.pinTitle = 'Pin this note';
     } else {
@@ -72,6 +78,16 @@ export class ChildNoteComponent implements OnInit {
       this.pinnedNotes.push(this.note);
       this.pinTitle = 'Pin this note';
     }
+    // ERROR CANNOT PUT /assets/notes.json
+    // this.notesService.putNotes(this.note).subscribe((n: Note) => {
+    //     this.note = n;
+    //     console.log(JSON.stringify(n));
+    //   } );
+    // this.notesService.postNote(this.note).subscribe((n: Note) => {
+    //   this.note = n;
+    //   console.log(JSON.stringify(n));
+    // });
+
   }
 
   changeColor(): void {

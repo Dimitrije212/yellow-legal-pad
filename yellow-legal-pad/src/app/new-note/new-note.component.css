@@ -1,0 +1,38 @@
+textarea {
+  margin-top: 15px;
+  margin-left: 25px;
+  width: 55%;
+  height: 600px;
+  outline: palegoldenrod;
+  resize: none;
+  font-size: larger;
+  overflow: auto;
+  background-color: rgb(255, 247, 155);
+  padding: 20px;
+  text-indent: 0%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+div.topRow {
+  margin-left: 25px;
+  margin-top: 15px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.btn {
+  background-color: #68AEBC; /* Blue background */
+   /* Remove borders */
+  color: white; /* White text */
+  /* padding: 9px 13px; Some padding */
+  font-size: 20px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: rgb(35, 85, 95);
+}
+
+.btn:disabled {
+  background-color: #6699cc;
+  cursor: not-allowed;
+}

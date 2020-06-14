@@ -9,6 +9,7 @@ import { NoteFocusDirective } from './note-focus.directive';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { DisableButtonDirective } from './disable-button.directive';
 import { NewNoteComponent } from './new-note/new-note.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +23,7 @@ import { NewNoteComponent } from './new-note/new-note.component';
     BrowserModule,
     AppRoutingModule,
     NoopAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
