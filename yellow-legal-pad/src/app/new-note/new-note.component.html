@@ -1,8 +1,18 @@
 <div>
   <div class="topRow">
     <label>Title: </label>
-    <input>
-    <button class="btn" (click)="save()">Save</button>
+    <input type="text" #title [(ngModel)]='ttl'>
+    <label>Color:</label>
+    <select #color>
+      <option value="1">yellow</option>
+      <option value="2">green</option>
+      <option value="3">red</option>
+      <option value="4">purple</option>
+      <option value="5">soft pink</option>
+      <option value="6">soft yellow</option>
+      <option value="7">blue</option>
+    </select>
+    <a routerLink="/myNotes"><button class="btn" (click)="save(title.value, writing.value, color.value)">Save</button></a>
   </div>
-  <textarea></textarea>
+  <textarea #writing>{{wrt}}</textarea>
 </div>

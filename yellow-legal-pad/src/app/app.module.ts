@@ -10,6 +10,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { DisableButtonDirective } from './disable-button.directive';
 import { NewNoteComponent } from './new-note/new-note.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ClickLinkPipe } from './click-link.pipe';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,13 +19,15 @@ import { HttpClientModule } from '@angular/common/http';
     ChildNoteComponent,
     NoteFocusDirective,
     DisableButtonDirective,
-    NewNoteComponent
+    NewNoteComponent,
+    ClickLinkPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NoopAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

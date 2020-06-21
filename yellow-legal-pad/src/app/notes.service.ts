@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Note } from './note';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
+// import { Observable } from 'rxjs';
+// import { map, catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +20,8 @@ export class NotesService {
     new Note('Spisak za kupovinu', 'Hleb, Mleko, Jogurt', false, undefined),
     new Note('Angular kurs', 'Treba da uradimo nei projekat kako bi mogli da polazemo kurs', true, undefined),
     new Note('Neki naslov', 'Kreativnitekstkojinikonecitaniticenekocitati', false, undefined),
-    new Note('Spisak za kupovinu', 'Hleb, Mleko, Jogudrt', false, undefined)
+    new Note('Spisak za kupovinu', 'Hleb, Mleko, Jogudrt', false, undefined),
+    new Note('Matf', 'http://www.matf.bg.ac.rs/', false, undefined)
   ];
 
   constructor(private http: HttpClient) {

@@ -16,3 +16,17 @@ hr {
 h3 {
   color: #21545e;
 }
+
+.btn {
+  background-color: #68AEBC; /* Blue background */
+   /* Remove borders */
+  color: white; /* White text */
+  /* padding: 9px 13px; Some padding */
+  font-size: 20px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: rgb(35, 85, 95);
+}

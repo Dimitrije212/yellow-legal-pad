@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { NotesService } from '../notes.service';
 import { Note } from '../note';
+import { Router } from '@angular/router';
+import { NoteEditService } from '../note-edit.service';
 
 
 @Component({
@@ -20,7 +21,7 @@ export class ChildNoteComponent implements OnInit {
   selectedColor: string;
 
   colors: string[] = ['#c5d6ce', '#e9ee86', '#afbf30', '#fe102f', '#fc8abf', '#fee6ec'];
-  constructor(private notesService: NotesService) { }
+  constructor(private router: Router, private noteEdit: NoteEditService) { }
 
   ngOnInit(): void {
     if (this.note.color === undefined) {
@@ -93,6 +94,13 @@ export class ChildNoteComponent implements OnInit {
   changeColor(): void {
     const i = this.colors.indexOf(this.note.color);
     this.note.color = this.colors[i + 1];
+  }
+
+  editNote(): void {
+    this.noteEdit.setNote(this.note);
+    this.notes.splice(this.notes.indexOf(this.note), 1);
+    this.pinnedNotes.splice(this.pinnedNotes.indexOf(this.note), 1);
+    this.router.navigate(['/newNote']);
   }
 
 }
