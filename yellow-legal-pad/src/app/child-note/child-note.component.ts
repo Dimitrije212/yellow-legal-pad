@@ -100,7 +100,11 @@ export class ChildNoteComponent implements OnInit {
     this.noteEdit.setNote(this.note);
     this.notes.splice(this.notes.indexOf(this.note), 1);
     this.pinnedNotes.splice(this.pinnedNotes.indexOf(this.note), 1);
-    this.router.navigate(['/newNote']);
+    if(this.note.writing.length > 1) {
+      this.router.navigate(['/todoList']);
+    } else {
+      this.router.navigate(['/newNote']);
+    }
   }
 
 }

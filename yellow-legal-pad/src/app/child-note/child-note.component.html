@@ -7,7 +7,8 @@
       </th>
       <tr>
         <!-- {{note.writing | clickLink}} -->
-        <div [innerHtml]="note.writing | clickLink"></div>
+        <div *ngIf="note.writing.length < 2" [innerHtml]="note.writing[0] | clickLink"></div>
+        <div *ngIf="note.writing.length >= 2" [innerHTML]='note.writing |makelist'></div>
       </tr>
     </table>
   </div>

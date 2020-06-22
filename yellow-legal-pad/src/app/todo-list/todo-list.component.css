@@ -1,0 +1,19 @@
+
+.btn {
+  background-color: #68AEBC; /* Blue background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 9px 13px; /* Some padding */
+  font-size: 12px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: rgb(35, 85, 95);
+}
+
+.btn:disabled {
+  background-color: #6699cc;
+  cursor: not-allowed;
+}

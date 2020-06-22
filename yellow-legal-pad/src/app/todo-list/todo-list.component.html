@@ -1,0 +1,25 @@
+<div>
+  <div class="topRow">
+    <label>Title: </label>
+    <input type="text" #title [(ngModel)]='ttl'>
+    <label>Color:</label>
+    <select #color>
+      <option value="1">yellow</option>
+      <option value="2">green</option>
+      <option value="3">red</option>
+      <option value="4">purple</option>
+      <option value="5">soft pink</option>
+      <option value="6">soft yellow</option>
+      <option value="7">blue</option>
+    </select>
+    <a routerLink="/myNotes"><button class="btn" (click)="save(title.value, color.value)">Save</button></a>
+  </div>
+    <div>
+      <button class="btn" (click)="wrt.push('')">+</button>
+      <button class="btn" *ngIf="wrt.length <= 1" (click)="wrt.pop()" appDisableButton>-</button>
+      <button class="btn" *ngIf="wrt.length > 1" (click)="wrt.pop()">-</button>
+    </div>
+    <div *ngFor="let num of wrt; index as i">
+      <input [(ngModel)]="wrt[i]">
+    </div>
+</div>

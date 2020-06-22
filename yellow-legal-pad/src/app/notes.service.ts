@@ -17,11 +17,11 @@ export class NotesService {
   private pinnedNotes: Note[];
 
   private notes = [
-    new Note('Spisak za kupovinu', 'Hleb, Mleko, Jogurt', false, undefined),
-    new Note('Angular kurs', 'Treba da uradimo nei projekat kako bi mogli da polazemo kurs', true, undefined),
-    new Note('Neki naslov', 'Kreativnitekstkojinikonecitaniticenekocitati', false, undefined),
-    new Note('Spisak za kupovinu', 'Hleb, Mleko, Jogudrt', false, undefined),
-    new Note('Matf', 'http://www.matf.bg.ac.rs/', false, undefined)
+    new Note('Spisak za kupovinu', ['Hleb, Mleko, Jogurt'], false, undefined),
+    new Note('Angular kurs', ['Treba da uradimo nei projekat kako bi mogli da polazemo kurs'], true, undefined),
+    new Note('Neki naslov', ['Kreativnitekstkojinikonecitaniticenekocitati'], false, undefined),
+    new Note('Spisak za kupovinu', ['Hleb', 'Mleko', 'Jogudrt'], false, undefined),
+    new Note('Matf', ['http://www.matf.bg.ac.rs/'], false, undefined)
   ];
 
   constructor(private http: HttpClient) {

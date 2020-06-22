@@ -1,32 +1,39 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NotesService } from '../notes.service';
-import { Note } from '../note';
 import { NoteEditService } from '../note-edit.service';
+import { Note } from '../note';
 
 @Component({
-  selector: 'app-new-note',
-  templateUrl: './new-note.component.html',
-  styleUrls: ['./new-note.component.css']
+  selector: 'app-todo-list',
+  templateUrl: './todo-list.component.html',
+  styleUrls: ['./todo-list.component.css']
 })
-export class NewNoteComponent implements OnInit {
-
+export class TodoListComponent implements OnInit {
   colors: string[] = ['#c5d6ce', '#e9ee86', '#afbf30', '#fe102f', '#fc8abf', '#fee6ec'];
   constructor(private notesService: NotesService, private noteEdit: NoteEditService) { }
+
+  count: number;
 
   note: Note;
   wrt: string[];
   ttl: string;
 
   ngOnInit(): void {
+    this.count = 1;
     this.note = this.noteEdit.getNote();
     this.wrt = this.note ? this.note.writing : [''];
     this.ttl = this.note ? this.note.title : '';
   }
 
-  save(title: string, writing: string[], color: number): void {
-    this.notesService.addNote(new Note(title, writing, false, this.colors[color]));
+  save(title: string, color: number): void {
+    this.notesService.addNote(new Note(title, this.wrt, false, this.colors[color]));
+    console.log(this.ttl);
+
 
     alert('New note added!');
   }
 
+  add(): void {
+    this.wrt.push('');
+  }
 }

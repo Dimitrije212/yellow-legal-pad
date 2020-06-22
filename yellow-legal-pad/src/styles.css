@@ -1,8 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-/* body {
-  background-image: url(/assets/cork-board.png);
-  background-repeat:repeat;
-} */
+body {
+  background-color: #40999c;
+  background-image: url(http://www.transparenttextures.com/patterns/lined-paper.png);
+}
 
 html, body { height: 100%; }
 body { margin-left: 20%; font-family: Roboto, "Helvetica Neue", sans-serif; }

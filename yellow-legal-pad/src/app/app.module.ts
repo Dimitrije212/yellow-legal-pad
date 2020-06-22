@@ -12,6 +12,8 @@ import { NewNoteComponent } from './new-note/new-note.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ClickLinkPipe } from './click-link.pipe';
 import { FormsModule } from '@angular/forms';
+import { MakelistPipe } from './makelist.pipe';
+import { TodoListComponent } from './todo-list/todo-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,9 @@ import { FormsModule } from '@angular/forms';
     NoteFocusDirective,
     DisableButtonDirective,
     NewNoteComponent,
-    ClickLinkPipe
+    ClickLinkPipe,
+    MakelistPipe,
+    TodoListComponent
   ],
   imports: [
     BrowserModule,
