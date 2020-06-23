@@ -16,12 +16,14 @@ export class NotesService {
   };
   private pinnedNotes: Note[];
 
+
+  // colors: string[] = ['#c5d6ce', '#e9ee86', '#afbf30', '#fe102f', '#fc8abf', '#fee6ec'];
   private notes = [
-    new Note('Spisak za kupovinu', ['Hleb, Mleko, Jogurt'], false, undefined),
-    new Note('Angular kurs', ['Treba da uradimo nei projekat kako bi mogli da polazemo kurs'], true, undefined),
-    new Note('Neki naslov', ['Kreativnitekstkojinikonecitaniticenekocitati'], false, undefined),
-    new Note('Spisak za kupovinu', ['Hleb', 'Mleko', 'Jogudrt'], false, undefined),
-    new Note('Matf', ['http://www.matf.bg.ac.rs/'], false, undefined)
+    new Note('Naslov beleške', ['Beleška'], false, '#c5d6ce'),
+    new Note('Angular kurs', ['Treba da uradimo projekat kako bi polozili kurs'], true, undefined),
+    new Note('Neki naslov', ['Tekstkojiproveravastasedesiakoimaviseodmaksimumazared'], false, '#afbf30'),
+    new Note('Spisak za kupovinu', ['Hleb', 'Mleko', 'Jogurt'], false, '#fc8abf'),
+    new Note('Matf', ['Link do sajta matematickog fakulteta http://www.matf.bg.ac.rs/'], false, '#fe102f')
   ];
 
   constructor(private http: HttpClient) {
